@@ -6,8 +6,29 @@
       "tag": "vless-in",
       "listen": "::",
       "listen_port": 8080,
-      "users": [{ "uuid": "PASTE_YOUR_UUID_HERE" }],
+      "users": [{ "uuid": "PASTE_UUID_HERE" }],
       "transport": { "type": "ws", "path": "/vless" }
+    },
+    {
+      "type": "vmess",
+      "tag": "vmess-in",
+      "listen": "::",
+      "listen_port": 8081,
+      "users": [
+        {
+          "uuid": "PASTE_UUID_HERE",
+          "alterId": 0
+        }
+      ],
+      "transport": { "type": "ws", "path": "/vmess" }
+    },
+    {
+      "type": "trojan",
+      "tag": "trojan-in",
+      "listen": "::",
+      "listen_port": 8082,
+      "users": [{ "password": "PASTE_TROJAN_PASSWORD_HERE" }],
+      "transport": { "type": "ws", "path": "/trojan" }
     }
   ],
   "outbounds": [{ "type": "direct", "tag": "direct" }]
